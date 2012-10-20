@@ -57,7 +57,9 @@
 			isa = PBXGroup;
 			children = (
 				9D82690A16336D6C0000217A /* montecristo */,
+				9D82692416336E410000217A /* core data */,
 				9D82690116336D6C0000217A /* Frameworks */,
+				9D82690B16336D6C0000217A /* Supporting Files */,
 				9D8268FF16336D6C0000217A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,8 +88,6 @@
 			children = (
 				9D82691316336D6C0000217A /* AppDelegate.h */,
 				9D82691416336D6C0000217A /* AppDelegate.m */,
-				9D82691C16336D6C0000217A /* montecristo.xcdatamodeld */,
-				9D82690B16336D6C0000217A /* Supporting Files */,
 			);
 			path = montecristo;
 			sourceTree = "<group>";
@@ -104,6 +104,16 @@
 				9D82691A16336D6C0000217A /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			path = montecristo;
+			sourceTree = "<group>";
+		};
+		9D82692416336E410000217A /* core data */ = {
+			isa = PBXGroup;
+			children = (
+				9D82691C16336D6C0000217A /* montecristo.xcdatamodeld */,
+			);
+			name = "core data";
+			path = montecristo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
