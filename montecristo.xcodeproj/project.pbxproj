@@ -18,6 +18,9 @@
 		9D82691916336D6C0000217A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D82691816336D6C0000217A /* Default@2x.png */; };
 		9D82691B16336D6C0000217A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D82691A16336D6C0000217A /* Default-568h@2x.png */; };
 		9D82691E16336D6C0000217A /* montecristo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D82691C16336D6C0000217A /* montecristo.xcdatamodeld */; };
+		9DE8554D1633706900EF74C6 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE8554C1633706900EF74C6 /* Category.m */; };
+		9DE855511633706A00EF74C6 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE855501633706A00EF74C6 /* User.m */; };
+		9DE855541633708D00EF74C6 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE855531633708D00EF74C6 /* CoreDataHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,12 @@
 		9D82691816336D6C0000217A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		9D82691A16336D6C0000217A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9D82691D16336D6C0000217A /* montecristo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = montecristo.xcdatamodel; sourceTree = "<group>"; };
+		9DE8554B1633706900EF74C6 /* Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
+		9DE8554C1633706900EF74C6 /* Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
+		9DE8554F1633706A00EF74C6 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		9DE855501633706A00EF74C6 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		9DE855521633708D00EF74C6 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
+		9DE855531633708D00EF74C6 /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +120,12 @@
 			isa = PBXGroup;
 			children = (
 				9D82691C16336D6C0000217A /* montecristo.xcdatamodeld */,
+				9DE8554F1633706A00EF74C6 /* User.h */,
+				9DE855501633706A00EF74C6 /* User.m */,
+				9DE8554B1633706900EF74C6 /* Category.h */,
+				9DE8554C1633706900EF74C6 /* Category.m */,
+				9DE855521633708D00EF74C6 /* CoreDataHelper.h */,
+				9DE855531633708D00EF74C6 /* CoreDataHelper.m */,
 			);
 			name = "core data";
 			path = montecristo;
@@ -184,6 +199,9 @@
 				9D82691116336D6C0000217A /* main.m in Sources */,
 				9D82691516336D6C0000217A /* AppDelegate.m in Sources */,
 				9D82691E16336D6C0000217A /* montecristo.xcdatamodeld in Sources */,
+				9DE8554D1633706900EF74C6 /* Category.m in Sources */,
+				9DE855511633706A00EF74C6 /* User.m in Sources */,
+				9DE855541633708D00EF74C6 /* CoreDataHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +310,7 @@
 				9D82692316336D6C0000217A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
