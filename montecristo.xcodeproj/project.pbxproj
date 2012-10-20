@@ -21,6 +21,7 @@
 		9DE8554D1633706900EF74C6 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE8554C1633706900EF74C6 /* Category.m */; };
 		9DE855511633706A00EF74C6 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE855501633706A00EF74C6 /* User.m */; };
 		9DE855541633708D00EF74C6 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE855531633708D00EF74C6 /* CoreDataHelper.m */; };
+		9DE855561633710100EF74C6 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DE855551633710100EF74C6 /* Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		9DE855501633706A00EF74C6 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		9DE855521633708D00EF74C6 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
 		9DE855531633708D00EF74C6 /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
+		9DE855551633710100EF74C6 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				9D82691616336D6C0000217A /* Default.png */,
 				9D82691816336D6C0000217A /* Default@2x.png */,
 				9D82691A16336D6C0000217A /* Default-568h@2x.png */,
+				9DE855551633710100EF74C6 /* Storyboard.storyboard */,
 			);
 			name = "Supporting Files";
 			path = montecristo;
@@ -186,6 +189,7 @@
 				9D82691716336D6C0000217A /* Default.png in Resources */,
 				9D82691916336D6C0000217A /* Default@2x.png in Resources */,
 				9D82691B16336D6C0000217A /* Default-568h@2x.png in Resources */,
+				9DE855561633710100EF74C6 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
