@@ -61,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mAq-FR-uwp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="56" y="21"/>
+            <point key="canvasLocation" x="-342" y="-561"/>
         </scene>
         <!--Categories Controller-->
         <scene sceneID="1Ql-jj-tnF">
@@ -72,11 +72,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="uFo-Uq-B6C" detailTextLabel="HvB-dw-8ia" rowHeight="64" style="IBUITableViewCellStyleSubtitle" id="QZW-ha-4As">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="uFo-Uq-B6C" detailTextLabel="HvB-dw-8ia" rowHeight="64" style="IBUITableViewCellStyleSubtitle" id="QZW-ha-4As">
                                 <rect key="frame" x="0.0" y="46" width="320" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="10" y="1" width="280" height="63"/>
+                                    <rect key="frame" x="10" y="1" width="267" height="63"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uFo-Uq-B6C">
@@ -93,7 +93,8 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="tmB-et-AEs" kind="push" identifier="EditCategory" id="czL-2e-AZE"/>
+                                    <segue destination="tmB-et-AEs" kind="push" identifier="EditCategory" trigger="accessoryAction" id="ur4-Np-Ldj"/>
+                                    <segue destination="sEW-eb-kS0" kind="push" identifier="EditExpenses" id="iTe-zr-NDm"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -117,7 +118,39 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8BQ-Oe-cKO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="926" y="41"/>
+            <point key="canvasLocation" x="872" y="-561"/>
+        </scene>
+        <!--Expenses Controller-->
+        <scene sceneID="9re-fC-Dqt">
+            <objects>
+                <tableViewController id="sEW-eb-kS0" customClass="ExpensesController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ffL-XR-8Lr">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="O2g-xs-ev0">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="sEW-eb-kS0" id="D3W-Mx-DDd"/>
+                            <outlet property="delegate" destination="sEW-eb-kS0" id="pcZ-5J-tpO"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="d3B-mj-T5e">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="tXA-J4-Lm7"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NVb-pH-TXp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1471" y="153"/>
         </scene>
         <!--Category Detail - Category details-->
         <scene sceneID="YHD-jW-az9">
@@ -189,7 +222,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uns-5T-AYB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1317" y="112"/>
+            <point key="canvasLocation" x="1471" y="-561"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qng-NO-Xjc">
@@ -207,15 +240,48 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DQl-k9-5eb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="523" y="19"/>
+            <point key="canvasLocation" x="339" y="-561"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="CategoriesController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CategoriesController.h"/>
+            <relationships>
+                <relationship kind="action" name="logoutButtonPressed:"/>
+            </relationships>
+        </class>
+        <class className="CategoryDetail" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CategoryDetail.h"/>
+            <relationships>
+                <relationship kind="action" name="editSaveButtonPressed:"/>
+                <relationship kind="action" name="resignKeyboard:"/>
+                <relationship kind="outlet" name="titleField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ExpensesController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ExpensesController.h"/>
+            <relationships>
+                <relationship kind="action" name="logoutButtonPressed:"/>
+            </relationships>
+        </class>
+        <class className="LoginViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="resignAndLogin:"/>
+                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="usernameField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="0dH-7d-2EW"/>
+        <segue reference="ur4-Np-Ldj"/>
     </inferredMetricsTieBreakers>
 </document>
