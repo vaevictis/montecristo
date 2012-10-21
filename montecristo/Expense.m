@@ -14,7 +14,7 @@
 
 @dynamic timestamp;
 @dynamic title;
-@dynamic desc;
+@dynamic amount;
 @dynamic category;
 
 @end

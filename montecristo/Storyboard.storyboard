@@ -146,14 +146,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="O2g-xs-ev0">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="Cci-wG-LWv" detailTextLabel="g48-Tv-VI1" style="IBUITableViewCellStyleSubtitle" id="O2g-xs-ev0">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cci-wG-LWv">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g48-Tv-VI1">
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="03t-ou-Fpi" kind="push" identifier="EditExpense" id="pOI-kx-aqR"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -167,11 +182,129 @@
                                 <action selector="logoutButtonPressed:" destination="sEW-eb-kS0" id="Dwq-cY-qdE"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="rDl-IY-1b9">
+                            <connections>
+                                <segue destination="03t-ou-Fpi" kind="push" identifier="AddExpense" id="Nol-he-AUh"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NVb-pH-TXp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1471" y="153"/>
+        </scene>
+        <!--Expense Detail - Expense Details-->
+        <scene sceneID="FTa-5V-0di">
+            <objects>
+                <tableViewController id="03t-ou-Fpi" customClass="ExpenseDetail" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="o5j-nm-yJU">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="rOm-nZ-0yS">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="yVN-Fo-BOh">
+                                        <rect key="frame" x="0.0" y="10" width="320" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Title:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRW-Jc-RTn">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="FNj-yi-Bbf"/>
+                                                        <constraint firstAttribute="width" constant="64" id="Gwe-A4-4r8"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.31789603370000002" green="0.60565504120000002" blue="0.79995329479999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Expense title..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ptS-02-aCo">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="214" id="MIl-po-jCg"/>
+                                                        <constraint firstAttribute="height" constant="30" id="eEo-Wf-2dp"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="resignKeyboard:" destination="03t-ou-Fpi" eventType="editingDidEndOnExit" id="R3D-ae-Cv5"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="GRW-Jc-RTn" firstAttribute="leading" secondItem="yVN-Fo-BOh" secondAttribute="leading" constant="24" id="IzQ-yS-WH9"/>
+                                            <constraint firstItem="ptS-02-aCo" firstAttribute="leading" secondItem="GRW-Jc-RTn" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="MlH-SL-Bj0"/>
+                                            <constraint firstItem="ptS-02-aCo" firstAttribute="centerY" secondItem="yVN-Fo-BOh" secondAttribute="centerY" type="default" id="lrN-PU-zyu"/>
+                                            <constraint firstItem="GRW-Jc-RTn" firstAttribute="top" secondItem="yVN-Fo-BOh" secondAttribute="top" constant="12" id="wkn-cS-sjf"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="K94-gA-Bqy">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Fjb-dc-nC7">
+                                        <rect key="frame" x="0.0" y="76" width="320" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Amount:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRP-2A-9ig">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="FDk-dC-Vu5"/>
+                                                        <constraint firstAttribute="width" constant="64" id="MmW-As-Pnu"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.31789603370000002" green="0.60565504120000002" blue="0.79995329479999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Expense amount..." minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="j5A-bj-vs5">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="214" id="MQH-AX-mWg"/>
+                                                        <constraint firstAttribute="height" constant="30" id="h2L-62-RzF"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                    <connections>
+                                                        <action selector="resignKeyboard:" destination="03t-ou-Fpi" eventType="editingDidEndOnExit" id="KoK-PT-vpW"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="j5A-bj-vs5" firstAttribute="leading" secondItem="Fjb-dc-nC7" secondAttribute="leading" constant="96" id="9dN-Yp-FC6"/>
+                                            <constraint firstItem="j5A-bj-vs5" firstAttribute="centerY" secondItem="Fjb-dc-nC7" secondAttribute="centerY" type="default" id="BAW-sS-yli"/>
+                                            <constraint firstItem="TRP-2A-9ig" firstAttribute="leading" secondItem="Fjb-dc-nC7" secondAttribute="leading" constant="30" id="I2t-zF-cud"/>
+                                            <constraint firstItem="TRP-2A-9ig" firstAttribute="top" secondItem="Fjb-dc-nC7" secondAttribute="top" constant="12" id="lAm-9T-xe6"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="03t-ou-Fpi" id="DbX-sC-O3u"/>
+                            <outlet property="delegate" destination="03t-ou-Fpi" id="HfB-Yd-R9K"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Expense Details" id="kpT-7g-CR2">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="OzQ-rI-v5W">
+                            <connections>
+                                <action selector="editSaveButtonPressed:" destination="03t-ou-Fpi" id="9qW-x2-U3D"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="amountField" destination="j5A-bj-vs5" id="8e9-NO-kmm"/>
+                        <outlet property="titleField" destination="ptS-02-aCo" id="trh-X3-aUX"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qfw-vq-asw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1927" y="152"/>
         </scene>
         <!--Category Detail - Category details-->
         <scene sceneID="YHD-jW-az9">
@@ -279,6 +412,15 @@
                 <relationship kind="outlet" name="titleField" candidateClass="UITextField"/>
             </relationships>
         </class>
+        <class className="ExpenseDetail" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ExpenseDetail.h"/>
+            <relationships>
+                <relationship kind="action" name="editSaveButtonPressed:"/>
+                <relationship kind="action" name="resignKeyboard:"/>
+                <relationship kind="outlet" name="amountField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="titleField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
         <class className="ExpensesController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ExpensesController.h"/>
             <relationships>
@@ -306,5 +448,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="ur4-Np-Ldj"/>
+        <segue reference="pOI-kx-aqR"/>
     </inferredMetricsTieBreakers>
 </document>

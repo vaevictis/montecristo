@@ -7,7 +7,7 @@
 
 @property (nonatomic, retain) NSDate * timestamp;
 @property (nonatomic, retain) NSString * title;
-@property (nonatomic, retain) NSString * desc;
+@property (nonatomic, retain) NSNumber * amount;
 @property (nonatomic, retain) Category *category;
 
 @end
