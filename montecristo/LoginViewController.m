@@ -41,6 +41,12 @@
     }
 }
 
+- (IBAction)bypassLoginPressed:(id)sender
+{
+    [self performSegueWithIdentifier:@"LoginSegue" sender:sender];
+}
+
+
 //  When the view reappears after logout we want to wipe the username and password fields
 - (void)viewWillAppear:(BOOL)animated
 {
