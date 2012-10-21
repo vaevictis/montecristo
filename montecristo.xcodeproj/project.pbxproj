@@ -24,6 +24,7 @@
 		9DE855561633710100EF74C6 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DE855551633710100EF74C6 /* Storyboard.storyboard */; };
 		9DE85559163372B500EF74C6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE85558163372B500EF74C6 /* LoginViewController.m */; };
 		9DE8555C1633785900EF74C6 /* CategoriesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE8555B1633785900EF74C6 /* CategoriesController.m */; };
+		9DE8555F16337B2800EF74C6 /* CategoryDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE8555E16337B2800EF74C6 /* CategoryDetail.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,8 @@
 		9DE85558163372B500EF74C6 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		9DE8555A1633785900EF74C6 /* CategoriesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesController.h; sourceTree = "<group>"; };
 		9DE8555B1633785900EF74C6 /* CategoriesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesController.m; sourceTree = "<group>"; };
+		9DE8555D16337B2800EF74C6 /* CategoryDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryDetail.h; sourceTree = "<group>"; };
+		9DE8555E16337B2800EF74C6 /* CategoryDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryDetail.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,8 @@
 				9DE85558163372B500EF74C6 /* LoginViewController.m */,
 				9DE8555A1633785900EF74C6 /* CategoriesController.h */,
 				9DE8555B1633785900EF74C6 /* CategoriesController.m */,
+				9DE8555D16337B2800EF74C6 /* CategoryDetail.h */,
+				9DE8555E16337B2800EF74C6 /* CategoryDetail.m */,
 			);
 			path = montecristo;
 			sourceTree = "<group>";
@@ -218,6 +223,7 @@
 				9DE855541633708D00EF74C6 /* CoreDataHelper.m in Sources */,
 				9DE85559163372B500EF74C6 /* LoginViewController.m in Sources */,
 				9DE8555C1633785900EF74C6 /* CategoriesController.m in Sources */,
+				9DE8555F16337B2800EF74C6 /* CategoryDetail.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

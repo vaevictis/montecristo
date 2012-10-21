@@ -1,6 +1,7 @@
 #import "CategoriesController.h"
 #import "Category.h"
 #import "CoreDataHelper.h"
+#import "CategoryDetail.h"
 
 @implementation CategoriesController
 
@@ -82,11 +83,31 @@
         //  Commit the deletion in core data
         NSError *error;
         if (![self.managedObjectContext save:&error])
-            NSLog(@"Failed to delete picture item with error: %@", [error domain]);
+            NSLog(@"Failed to delete category item with error: %@", [error domain]);
 
         // Delete the row from the data source
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }   
+}
+
+//  When add is pressed or a table row is selected
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    //  Get a reference to our detail view
+    CategoryDetail *categoryDetail = (CategoryDetail *)[segue destinationViewController];
+
+    //  Pass the managed object context to the destination view controller
+    categoryDetail.managedObjectContext = managedObjectContext;
+
+    //  If we are editing a category we need to pass some stuff, so check the segue title first
+    if ([[segue identifier] isEqualToString:@"EditCategory"])
+    {
+        //  Get the row we selected to view
+        NSInteger selectedIndex = [[self.tableView indexPathForSelectedRow] row];
+
+        //  Pass the category object from the table that we want to view
+        categoryDetail.currentCategory = [categoriesData objectAtIndex:selectedIndex];
+    }
 }
 
 @end
