@@ -1,12 +1,7 @@
-//
-//  AppDelegate.m
-//  montecristo
-//
-//  Created by vaevictis on 21/10/12.
-//  Copyright (c) 2012 boost. All rights reserved.
-//
-
 #import "AppDelegate.h"
+#import "User.h"
+#import "Category.h"
+#import "LoginViewController.h"
 
 @implementation AppDelegate
 
@@ -16,6 +11,41 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Pass the managed object context to the root view controller (the login view)
+    LoginViewController *rootView = (LoginViewController *)self.window.rootViewController;
+    rootView.managedObjectContext = self.managedObjectContext;
+
+    // Get a reference to the stardard user defaults
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+
+    // Check if the app has run before by checking a key in user defaults
+    if ([prefs boolForKey:@"hasRunBefore"] != YES)
+    {
+        // Set flag so we know not to run this next time
+        [prefs setBool:YES forKey:@"hasRunBefore"];
+        [prefs synchronize];
+
+        // Add our default user object in Core Data
+        User *user = (User *)[NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.managedObjectContext];
+        [user setUsername:@"admin"];
+        [user setPassword:@"password"];
+
+
+        // Add default categories
+        Category *foodCategory = (Category *)[NSEntityDescription insertNewObjectForEntityForName:@"Category" inManagedObjectContext:self.managedObjectContext];
+        foodCategory.title = @"Food";
+
+        Category *flatCategory = (Category *)[NSEntityDescription insertNewObjectForEntityForName:@"Category" inManagedObjectContext:self.managedObjectContext];
+        flatCategory.title = @"Flat";
+
+        Category *entertainmentCategory = (Category *)[NSEntityDescription insertNewObjectForEntityForName:@"Category" inManagedObjectContext:self.managedObjectContext];
+        entertainmentCategory.title = @"Entertainment";
+
+        // Commit to core data
+        NSError *error;
+        if (![self.managedObjectContext save:&error])
+            NSLog(@"Failed to add default user with error: %@", [error domain]);
+    }
     return YES;
 }
 
