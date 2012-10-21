@@ -1,5 +1,6 @@
 #import "LoginViewController.h"
 #import "CoreDataHelper.h"
+#import "CategoriesController.h"
 
 @implementation LoginViewController
 
@@ -45,6 +46,16 @@
 {
     [usernameField setText:@""];
     [passwordField setText:@""];
+}
+
+
+//  When we have logged in successfully, we need to pass the managed object context to our table view (via the navigation controller)
+//  so we get a reference to the navigation controller first, then get the last controller in the nav stack, and pass the MOC to it
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    UINavigationController *navController = (UINavigationController *)[segue destinationViewController];
+    CategoriesController *categoriesList = (CategoriesController *)[[navController viewControllers] lastObject];
+    categoriesList.managedObjectContext = managedObjectContext;
 }
 
 @end
