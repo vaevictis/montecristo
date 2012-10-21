@@ -25,6 +25,8 @@
 		9DE85559163372B500EF74C6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE85558163372B500EF74C6 /* LoginViewController.m */; };
 		9DE8555C1633785900EF74C6 /* CategoriesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE8555B1633785900EF74C6 /* CategoriesController.m */; };
 		9DE8555F16337B2800EF74C6 /* CategoryDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE8555E16337B2800EF74C6 /* CategoryDetail.m */; };
+		9DE85562163397BA00EF74C6 /* Expense.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE85561163397BA00EF74C6 /* Expense.m */; };
+		9DE8556516340A9F00EF74C6 /* ExpensesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE8556416340A9F00EF74C6 /* ExpensesController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,10 @@
 		9DE8555B1633785900EF74C6 /* CategoriesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesController.m; sourceTree = "<group>"; };
 		9DE8555D16337B2800EF74C6 /* CategoryDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryDetail.h; sourceTree = "<group>"; };
 		9DE8555E16337B2800EF74C6 /* CategoryDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryDetail.m; sourceTree = "<group>"; };
+		9DE85560163397BA00EF74C6 /* Expense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expense.h; sourceTree = "<group>"; };
+		9DE85561163397BA00EF74C6 /* Expense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Expense.m; sourceTree = "<group>"; };
+		9DE8556316340A9F00EF74C6 /* ExpensesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpensesController.h; sourceTree = "<group>"; };
+		9DE8556416340A9F00EF74C6 /* ExpensesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpensesController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +120,8 @@
 				9DE8555B1633785900EF74C6 /* CategoriesController.m */,
 				9DE8555D16337B2800EF74C6 /* CategoryDetail.h */,
 				9DE8555E16337B2800EF74C6 /* CategoryDetail.m */,
+				9DE8556316340A9F00EF74C6 /* ExpensesController.h */,
+				9DE8556416340A9F00EF74C6 /* ExpensesController.m */,
 			);
 			path = montecristo;
 			sourceTree = "<group>";
@@ -144,6 +152,8 @@
 				9DE8554C1633706900EF74C6 /* Category.m */,
 				9DE855521633708D00EF74C6 /* CoreDataHelper.h */,
 				9DE855531633708D00EF74C6 /* CoreDataHelper.m */,
+				9DE85560163397BA00EF74C6 /* Expense.h */,
+				9DE85561163397BA00EF74C6 /* Expense.m */,
 			);
 			name = "core data";
 			path = montecristo;
@@ -224,6 +234,8 @@
 				9DE85559163372B500EF74C6 /* LoginViewController.m in Sources */,
 				9DE8555C1633785900EF74C6 /* CategoriesController.m in Sources */,
 				9DE8555F16337B2800EF74C6 /* CategoryDetail.m in Sources */,
+				9DE85562163397BA00EF74C6 /* Expense.m in Sources */,
+				9DE8556516340A9F00EF74C6 /* ExpensesController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
