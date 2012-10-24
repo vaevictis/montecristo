@@ -2,16 +2,19 @@
 #import "Expense.h"
 #import "CoreDataHelper.h"
 #import "ExpenseDetail.h"
+#import "Category.h"
 
 @implementation ExpensesController
 
-@synthesize managedObjectContext, expensesData;
+@synthesize managedObjectContext, expensesData, currentCategory;
 
 //  When the view reappears, read new data for table
 - (void)viewWillAppear:(BOOL)animated
 {
     //  Repopulate the array with new table data
     [self readDataForTable];
+
+    self.title = currentCategory.title;
 }
 
 //  Grab data for table - this will be used whenever the list appears or reappears after an add/edit
@@ -107,6 +110,8 @@
 
         //  Pass the expense object from the table that we want to view
         expenseDetail.currentExpense = [expensesData objectAtIndex:selectedIndex];
+
+        expenseDetail.currentCategory = self.currentCategory;
     }
 }
 

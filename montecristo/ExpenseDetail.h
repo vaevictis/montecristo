@@ -6,6 +6,7 @@
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @property (strong, nonatomic) Expense *currentExpense;
+@property (strong, nonatomic) Category *currentCategory;
 
 @property (strong, nonatomic) IBOutlet UITextField *titleField;
 @property (strong, nonatomic) IBOutlet UITextField *amountField;

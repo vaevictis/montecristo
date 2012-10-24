@@ -80,7 +80,7 @@
             </objects>
             <point key="canvasLocation" x="-342" y="-561"/>
         </scene>
-        <!--Categories Controller-->
+        <!--Categories Controller - Categories-->
         <scene sceneID="1Ql-jj-tnF">
             <objects>
                 <tableViewController id="cGj-rQ-v3J" customClass="CategoriesController" sceneMemberID="viewController">
@@ -111,7 +111,7 @@
                                 </view>
                                 <connections>
                                     <segue destination="tmB-et-AEs" kind="push" identifier="EditCategory" trigger="accessoryAction" id="ur4-Np-Ldj"/>
-                                    <segue destination="sEW-eb-kS0" kind="push" identifier="EditExpenses" id="iTe-zr-NDm"/>
+                                    <segue destination="sEW-eb-kS0" kind="push" identifier="Expenses" id="iTe-zr-NDm"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -120,7 +120,7 @@
                             <outlet property="delegate" destination="cGj-rQ-v3J" id="8M6-RJ-Cw8"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="1mg-R4-Nrn">
+                    <navigationItem key="navigationItem" title="Categories" id="1mg-R4-Nrn">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="qvz-Uc-glM">
                             <connections>
                                 <action selector="logoutButtonPressed:" destination="cGj-rQ-v3J" id="rGi-QU-OS7"/>
@@ -177,11 +177,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="d3B-mj-T5e">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="tXA-J4-Lm7">
-                            <connections>
-                                <action selector="logoutButtonPressed:" destination="sEW-eb-kS0" id="Dwq-cY-qdE"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="rDl-IY-1b9">
                             <connections>
                                 <segue destination="03t-ou-Fpi" kind="push" identifier="AddExpense" id="Nol-he-AUh"/>
@@ -448,6 +443,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="ur4-Np-Ldj"/>
-        <segue reference="pOI-kx-aqR"/>
+        <segue reference="Nol-he-AUh"/>
     </inferredMetricsTieBreakers>
 </document>

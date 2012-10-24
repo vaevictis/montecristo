@@ -1,9 +1,10 @@
 #import "ExpenseDetail.h"
+#import "Category.h"
 
 @implementation ExpenseDetail
 
 @synthesize managedObjectContext;
-@synthesize currentExpense;
+@synthesize currentExpense, currentCategory;
 @synthesize titleField, amountField;
 //@synthesize imageField;
 //@synthesize imagePicker;
@@ -14,11 +15,13 @@
 {
     [super viewDidLoad];
 
-    // If we are editing an existing picture, then put the details from Core Data into the text fields for displaying
+    // If we are editing an existing expense, then put the details from Core Data into the text fields for displaying
     if (currentExpense)
     {
         [titleField setText:[currentExpense title]];
         [amountField setText:[currentExpense.amount stringValue]];
+        self.title = currentCategory.title;
+
 //        if ([currentExpense smallPicture])
 //            [imageField setImage:[UIImage imageWithData:[currentPicture smallPicture]]];
     }
@@ -39,6 +42,7 @@
     [amountFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
 
    [self.currentExpense setAmount:[amountFormatter numberFromString:amountField.text]];
+    self.currentExpense.category = currentCategory;
 
 //    if (imageField.image)
 //    {

@@ -2,6 +2,7 @@
 #import "Category.h"
 #import "CoreDataHelper.h"
 #import "CategoryDetail.h"
+#import "ExpensesController.h"
 
 @implementation CategoriesController
 
@@ -107,6 +108,18 @@
 
         //  Pass the category object from the table that we want to view
         categoryDetail.currentCategory = [categoriesData objectAtIndex:selectedIndex];
+    }
+
+    if ([[segue identifier] isEqualToString:@"Expenses"]) {
+        ExpensesController *expensesController = (ExpensesController *)[segue destinationViewController];
+
+        //  Pass the managed object context to the destination view controller
+        expensesController.managedObjectContext = managedObjectContext;
+
+        NSInteger selectedIndex = [[self.tableView indexPathForSelectedRow] row];
+
+        //  Pass the category object from the table that we want to view
+        expensesController.currentCategory = [categoriesData objectAtIndex:selectedIndex];
     }
 }
 

@@ -11,6 +11,7 @@
 
 @implementation Category
 
+@dynamic expenses;
 @dynamic title;
 
 @end
