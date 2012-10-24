@@ -59,10 +59,11 @@
 
     // Get the core data object we need to use to populate this table cell
     Category *currentCell = [categoriesData objectAtIndex:indexPath.row];
+    [currentCell getTotalExpenses];
 
     //  Fill in the cell contents
     cell.textLabel.text = [currentCell title];
-    cell.detailTextLabel.text = @"Lorem ipsum";
+    cell.detailTextLabel.text = [[currentCell totalExpenses] stringValue];
 
     return cell;
 }

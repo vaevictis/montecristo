@@ -30,8 +30,6 @@
                                          andSortAscending:NO
                                                andContext:managedObjectContext];
 
-    NSLog(@"expenses data: %@", expensesData);
-
     //  Force table refresh
     [self.tableView reloadData];
 }

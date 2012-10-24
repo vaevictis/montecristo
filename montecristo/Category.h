@@ -7,6 +7,7 @@
 
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSSet *expenses;
+@property (nonatomic, retain) NSNumber *totalExpenses;
 @end
 
 @interface Category (CoreDataGeneratedAccessors)
@@ -15,5 +16,6 @@
 - (void)removeExpensesObject:(Expense *)value;
 - (void)addExpenses:(NSSet *)values;
 - (void)removeExpenses:(NSSet *)values;
+- (void)getTotalExpenses;
 
 @end
