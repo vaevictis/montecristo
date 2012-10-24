@@ -15,7 +15,10 @@
     // If we are editing an existing Category, then put the details from Core Data into the text fields for displaying
     if (currentCategory)
     {
-        [titleField setText: currentCategory.title];
+        self.title      = [NSString stringWithFormat: @"Edit %@ category", currentCategory.title];
+        titleField.text = currentCategory.title;
+    } else {
+        self.title = @"New category";
     }
 }
 

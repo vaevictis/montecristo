@@ -21,7 +21,16 @@
 - (void)readDataForTable
 {
     //  Grab the data
-    expensesData = [CoreDataHelper getObjectsForEntity:@"Expense" withSortKey:@"timestamp" andSortAscending:NO andContext:managedObjectContext];
+//    expensesData = [CoreDataHelper getObjectsForEntity:@"Expense" withSortKey:@"timestamp" andSortAscending:NO andContext:managedObjectContext];
+    NSPredicate *categoryExpenses = [NSPredicate predicateWithFormat:@"category == %@", currentCategory];
+
+    expensesData = [CoreDataHelper searchObjectsForEntity:@"Expense"
+                                            withPredicate:categoryExpenses
+                                               andSortKey:@"title"
+                                         andSortAscending:NO
+                                               andContext:managedObjectContext];
+
+    NSLog(@"expenses data: %@", expensesData);
 
     //  Force table refresh
     [self.tableView reloadData];
@@ -102,6 +111,10 @@
     //  Pass the managed object context to the destination view controller
     expenseDetail.managedObjectContext = managedObjectContext;
 
+    // Pass the current category, be it in edition or creation of an expense
+    expenseDetail.currentCategory = currentCategory;
+
+
     //  If we are editing a category we need to pass some stuff, so check the segue title first
     if ([[segue identifier] isEqualToString:@"EditExpense"])
     {
@@ -110,8 +123,6 @@
 
         //  Pass the expense object from the table that we want to view
         expenseDetail.currentExpense = [expensesData objectAtIndex:selectedIndex];
-
-        expenseDetail.currentCategory = self.currentCategory;
     }
 }
 

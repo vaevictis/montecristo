@@ -38,8 +38,8 @@
         Category *flatCategory = (Category *)[NSEntityDescription insertNewObjectForEntityForName:@"Category" inManagedObjectContext:self.managedObjectContext];
         flatCategory.title = @"Flat";
 
-        Category *entertainmentCategory = (Category *)[NSEntityDescription insertNewObjectForEntityForName:@"Category" inManagedObjectContext:self.managedObjectContext];
-        entertainmentCategory.title = @"Entertainment";
+        Category *funCategory = (Category *)[NSEntityDescription insertNewObjectForEntityForName:@"Category" inManagedObjectContext:self.managedObjectContext];
+        funCategory.title = @"Fun";
 
         // Commit to core data
         NSError *error;

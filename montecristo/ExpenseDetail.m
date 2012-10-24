@@ -20,10 +20,13 @@
     {
         [titleField setText:[currentExpense title]];
         [amountField setText:[currentExpense.amount stringValue]];
-        self.title = currentCategory.title;
+
+        self.title = [NSString stringWithFormat: @"Edit %@ expense", currentCategory.title];
 
 //        if ([currentExpense smallPicture])
 //            [imageField setImage:[UIImage imageWithData:[currentPicture smallPicture]]];
+    } else {
+        self.title = [NSString stringWithFormat: @"New %@ expense", currentCategory.title];
     }
 }
 
@@ -41,7 +44,7 @@
     NSNumberFormatter *amountFormatter = [[NSNumberFormatter alloc] init];
     [amountFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
 
-   [self.currentExpense setAmount:[amountFormatter numberFromString:amountField.text]];
+    [self.currentExpense setAmount:[amountFormatter numberFromString:amountField.text]];
     self.currentExpense.category = currentCategory;
 
 //    if (imageField.image)
