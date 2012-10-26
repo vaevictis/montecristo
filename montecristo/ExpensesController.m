@@ -73,6 +73,13 @@
     cell.textLabel.text = currentExpense.title;
     cell.detailTextLabel.text = [currentExpense.amount stringValue];
 
+    //  If a picture exists then use it
+    if ([currentExpense picture])
+    {
+        cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
+        cell.imageView.image = [UIImage imageWithData:[currentExpense picture]];
+    }
+
     return cell;
 }
 

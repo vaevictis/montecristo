@@ -16,5 +16,6 @@
 @dynamic title;
 @dynamic amount;
 @dynamic category;
+@dynamic picture;
 
 @end
