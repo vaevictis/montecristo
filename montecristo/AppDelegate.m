@@ -2,6 +2,7 @@
 #import "User.h"
 #import "Category.h"
 #import "LoginViewController.h"
+#import "CategoriesController.h"
 
 @implementation AppDelegate
 
@@ -11,8 +12,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Pass the managed object context to the root view controller (the login view)
-    LoginViewController *rootView = (LoginViewController *)self.window.rootViewController;
+    UINavigationController *navController = (UINavigationController *)self.window.rootViewController;
+    CategoriesController *rootView = (CategoriesController *)navController.visibleViewController;
     rootView.managedObjectContext = self.managedObjectContext;
 
     // Get a reference to the stardard user defaults
