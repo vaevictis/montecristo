@@ -14,7 +14,6 @@
 {
     [super viewDidLoad];
 
-    // If we are editing an existing expense, then put the details from Core Data into the text fields for displaying
     if (currentExpense)
     {
         [titleField setText:[currentExpense title]];
@@ -122,7 +121,6 @@
     [imageField setImage:image];
 }
 
-//  On cancel, only dismiss the picker controller
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
     [imagePicker dismissViewControllerAnimated:YES completion:nil];

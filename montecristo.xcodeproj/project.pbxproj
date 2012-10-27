@@ -23,7 +23,6 @@
 		9DE855511633706A00EF74C6 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE855501633706A00EF74C6 /* User.m */; };
 		9DE855541633708D00EF74C6 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE855531633708D00EF74C6 /* CoreDataHelper.m */; };
 		9DE855561633710100EF74C6 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DE855551633710100EF74C6 /* Storyboard.storyboard */; };
-		9DE85559163372B500EF74C6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE85558163372B500EF74C6 /* LoginViewController.m */; };
 		9DE8555C1633785900EF74C6 /* CategoriesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE8555B1633785900EF74C6 /* CategoriesController.m */; };
 		9DE8555F16337B2800EF74C6 /* CategoryDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE8555E16337B2800EF74C6 /* CategoryDetail.m */; };
 		9DE85562163397BA00EF74C6 /* Expense.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE85561163397BA00EF74C6 /* Expense.m */; };
@@ -56,8 +55,6 @@
 		9DE855521633708D00EF74C6 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
 		9DE855531633708D00EF74C6 /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
 		9DE855551633710100EF74C6 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
-		9DE85557163372B500EF74C6 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		9DE85558163372B500EF74C6 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		9DE8555A1633785900EF74C6 /* CategoriesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesController.h; sourceTree = "<group>"; };
 		9DE8555B1633785900EF74C6 /* CategoriesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesController.m; sourceTree = "<group>"; };
 		9DE8555D16337B2800EF74C6 /* CategoryDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryDetail.h; sourceTree = "<group>"; };
@@ -120,8 +117,6 @@
 			children = (
 				9D82691316336D6C0000217A /* AppDelegate.h */,
 				9D82691416336D6C0000217A /* AppDelegate.m */,
-				9DE85557163372B500EF74C6 /* LoginViewController.h */,
-				9DE85558163372B500EF74C6 /* LoginViewController.m */,
 				9DE8555A1633785900EF74C6 /* CategoriesController.h */,
 				9DE8555B1633785900EF74C6 /* CategoriesController.m */,
 				9DE8555D16337B2800EF74C6 /* CategoryDetail.h */,
@@ -241,7 +236,6 @@
 				9DE8554D1633706900EF74C6 /* Category.m in Sources */,
 				9DE855511633706A00EF74C6 /* User.m in Sources */,
 				9DE855541633708D00EF74C6 /* CoreDataHelper.m in Sources */,
-				9DE85559163372B500EF74C6 /* LoginViewController.m in Sources */,
 				9DE8555C1633785900EF74C6 /* CategoriesController.m in Sources */,
 				9DE8555F16337B2800EF74C6 /* CategoryDetail.m in Sources */,
 				9DE85562163397BA00EF74C6 /* Expense.m in Sources */,
