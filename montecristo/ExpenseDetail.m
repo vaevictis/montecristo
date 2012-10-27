@@ -11,6 +11,7 @@
 @synthesize imagePicker;
 @synthesize usersData;
 @synthesize userPicker;
+@synthesize selectedUser;
 
 #pragma mark - View lifecycle
 
@@ -76,6 +77,7 @@
 
     [self.currentExpense setAmount:[amountFormatter numberFromString:amountField.text]];
     self.currentExpense.category = currentCategory;
+    self.currentExpense.user = selectedUser;
 
     if (imageField.image)
     {
@@ -83,26 +85,31 @@
     }
 
     NSError *error;
-    if (![self.managedObjectContext save:&error])
-        NSLog(@"Failed to add new expense with error: %@", [error domain]);
-
-    [self.navigationController popViewControllerAnimated:YES];
+    if (![self.managedObjectContext save:&error]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Have you checked your entries?"
+                                                        message:@"Title is compulsory.\nAmount must be a number.\nAuthor must be chosen."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 #pragma mark - Button actions
 
-- (IBAction)switchFieldOrSave:(id)sender
+- (IBAction)switchFieldOrCloseKeyboard:(id)sender
 {
     UITextField *tf = (UITextField *)sender;
     if (tf.tag == 1) {
         [amountField becomeFirstResponder];
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:1];
-        [self.tableView scrollToRowAtIndexPath:indexPath
-                              atScrollPosition:UITableViewScrollPositionTop
-                                      animated:YES];
+//        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:1];
+//        [self.tableView scrollToRowAtIndexPath:indexPath
+//                              atScrollPosition:UITableViewScrollPositionTop
+//                                      animated:YES];
     } else {
         [sender resignFirstResponder];
-        [self performSaveAndExit];
     }
 }
 
@@ -144,20 +151,24 @@
 - (NSInteger)pickerView:(UIPickerView *)pickerView
 numberOfRowsInComponent:(NSInteger)component
 {
-    return [usersData count];
+    return [usersData count] + 1;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView
              titleForRow:(NSInteger)row
             forComponent:(NSInteger)component
 {
-    return [[usersData objectAtIndex:row] username];
+    if (row == 0) {
+        return @"Choose...";
+    } else {
+        return [[usersData objectAtIndex:row - 1] username];
+    }
 }
 
 #pragma mark - PickerView Delegate
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row
       inComponent:(NSInteger)component
 {
-    [self.currentExpense setUser:[usersData objectAtIndex:row]];
+    self.selectedUser = [usersData objectAtIndex:row];
 }
 @end

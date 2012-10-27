@@ -3,32 +3,27 @@
 #import "CoreDataHelper.h"
 #import "CategoryDetail.h"
 #import "ExpensesController.h"
-#import "BalanceController.h"
+#import "UsersController.h"
+//#import "User.h"
 
 @implementation CategoriesController
 
 @synthesize managedObjectContext, categoriesData;
 
-//  When the view reappears, read new data for table
 - (void)viewWillAppear:(BOOL)animated
 {
-    //  Repopulate the array with new table data
     [self readDataForTable];
 }
 
-//  Grab data for table - this will be used whenever the list appears or reappears after an add/edit
 - (void)readDataForTable
 {
-    //  Grab the data
     categoriesData = [CoreDataHelper getObjectsForEntity:@"Category" withSortKey:@"title" andSortAscending:YES andContext:managedObjectContext];
 
-    //  Force table refresh
     [self.tableView reloadData];
 }
 
 #pragma mark - Actions
 
-//  Button to log out of app (dismiss the modal view!)
 - (IBAction)logoutButtonPressed:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -104,10 +99,21 @@
         expensesController.currentCategory = [categoriesData objectAtIndex:selectedIndex];
     }
 
-    if ([[segue identifier] isEqualToString:@"Balance"]) {
-        BalanceController *balanceController = (BalanceController *)[segue destinationViewController];
-        balanceController.managedObjectContext = self.managedObjectContext;
+    if ([[segue identifier] isEqualToString:@"Users"]) {
+        UsersController *usersController = (UsersController *)[segue destinationViewController];
+        usersController.managedObjectContext = self.managedObjectContext;
+//        [self computeUsersExpenses];
+
     }
 }
+
+//-(void)computeUsersExpenses
+//{
+//    NSArray *usersData = [CoreDataHelper getObjectsForEntity:@"User" withSortKey:@"username" andSortAscending:YES andContext:managedObjectContext];
+//
+//    for (User *user in usersData) {
+//        [user computeTotalExpenses];
+//    }
+//}
 
 @end

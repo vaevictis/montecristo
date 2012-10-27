@@ -30,13 +30,17 @@
 
     [self.currentCategory setTitle:[titleField text]];
 
-    //  Commit item to core data
     NSError *error;
-    if (![self.managedObjectContext save:&error])
-        NSLog(@"Failed to add new Category with error: %@", [error domain]);
-
-    //  Automatically pop to previous view now we're done adding
-    [self.navigationController popViewControllerAnimated:YES];
+    if (![self.managedObjectContext save:&error]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Have you checked your entries?"
+                                                        message:@"Title is compulsory."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 

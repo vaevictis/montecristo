@@ -9,7 +9,7 @@
 
 -(void)computeTotalExpenses
 {
-    NSNumber *total = [self valueForKeyPath:@"expenses.@sum.amount"];
-    self.totalExpenses = total;
+    NSNumber *totalExpenses = [self valueForKeyPath:@"expenses.@sum.amount"];
+    self.totalExpenses = totalExpenses;
 }
 @end
