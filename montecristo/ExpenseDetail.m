@@ -29,9 +29,36 @@
     }
 }
 
-#pragma mark - Button actions
+#pragma mark - Image editing
 
-- (IBAction)editSaveButtonPressed:(id)sender
+- (void)resizeAndSaveImage
+{
+    float resize = 74.0;
+    float actualWidth = imageField.image.size.width;
+    float actualHeight = imageField.image.size.height;
+    float divBy, newWidth, newHeight;
+    if (actualWidth > actualHeight) {
+        divBy = (actualWidth / resize);
+        newWidth = resize;
+        newHeight = (actualHeight / divBy);
+    } else {
+        divBy = (actualHeight / resize);
+        newWidth = (actualWidth / divBy);
+        newHeight = resize;
+    }
+    CGRect rect = CGRectMake(0.0, 0.0, newWidth, newHeight);
+    UIGraphicsBeginImageContext(rect.size);
+    [imageField.image drawInRect:rect];
+    UIImage *smallImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    NSData *imageData = UIImageJPEGRepresentation(smallImage, 1.0);
+    [self.currentExpense setPicture:imageData];
+}
+
+#pragma mark - Saving
+
+-(void)performSaveAndExit
 {
     if (!currentExpense)
         self.currentExpense = (Expense *)[NSEntityDescription insertNewObjectForEntityForName:@"Expense" inManagedObjectContext:self.managedObjectContext];
@@ -46,28 +73,7 @@
 
     if (imageField.image)
     {
-        // Resize and save a smaller version for the table
-        float resize = 74.0;
-        float actualWidth = imageField.image.size.width;
-        float actualHeight = imageField.image.size.height;
-        float divBy, newWidth, newHeight;
-        if (actualWidth > actualHeight) {
-            divBy = (actualWidth / resize);
-            newWidth = resize;
-            newHeight = (actualHeight / divBy);
-        } else {
-            divBy = (actualHeight / resize);
-            newWidth = (actualWidth / divBy);
-            newHeight = resize;
-        }
-        CGRect rect = CGRectMake(0.0, 0.0, newWidth, newHeight);
-        UIGraphicsBeginImageContext(rect.size);
-        [imageField.image drawInRect:rect];
-        UIImage *smallImage = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-
-        NSData *imageData = UIImageJPEGRepresentation(smallImage, 1.0);
-        [self.currentExpense setPicture:imageData];
+        [self resizeAndSaveImage];
     }
 
     NSError *error;
@@ -77,6 +83,28 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+#pragma mark - Button actions
+
+- (IBAction)switchFieldOrSave:(id)sender
+{
+    UITextField *tf = (UITextField *)sender;
+    if (tf.tag == 1) {
+        [amountField becomeFirstResponder];
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:1];
+        [self.tableView scrollToRowAtIndexPath:indexPath
+                              atScrollPosition:UITableViewScrollPositionTop
+                                      animated:YES];
+    } else {
+        [sender resignFirstResponder];
+        [self performSaveAndExit];
+    }
+}
+
+- (IBAction)editSaveButtonPressed:(id)sender
+{
+    [self performSaveAndExit];
+}
+
 - (IBAction)imageFromCamera:(id)sender
 {
     imagePicker = [[UIImagePickerController alloc] init];
@@ -84,11 +112,6 @@
     imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
     imagePicker.cameraDevice = UIImagePickerControllerCameraDeviceRear;
     [self presentViewController:imagePicker animated:YES completion:nil];
-}
-
-- (IBAction)resignKeyboard:(id)sender
-{
-    [sender resignFirstResponder];
 }
 
 #pragma mark - Image Picker Delegate Methods

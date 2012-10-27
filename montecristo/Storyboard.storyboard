@@ -103,8 +103,8 @@
                             <constraint firstItem="6Pd-gk-r7q" firstAttribute="leading" secondItem="kJw-3c-imd" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Dm4-tK-LhQ"/>
                             <constraint firstAttribute="trailing" secondItem="6Pd-gk-r7q" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Kbn-xV-lEx"/>
                             <constraint firstItem="18Z-1V-Fsn" firstAttribute="top" secondItem="kJw-3c-imd" secondAttribute="top" constant="28" id="QaB-SR-hIe"/>
+                            <constraint firstItem="6Pd-gk-r7q" firstAttribute="top" secondItem="kJw-3c-imd" secondAttribute="top" constant="236" id="V7B-IV-b66"/>
                             <constraint firstAttribute="trailing" secondItem="77n-gd-11c" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Xlq-bl-A1Y"/>
-                            <constraint firstItem="6Pd-gk-r7q" firstAttribute="top" secondItem="kJw-3c-imd" secondAttribute="top" constant="91" id="fT7-fQ-aGN"/>
                             <constraint firstItem="77n-gd-11c" firstAttribute="leading" secondItem="18Z-1V-Fsn" secondAttribute="leading" type="default" id="nPR-U8-vI3"/>
                             <constraint firstItem="77n-gd-11c" firstAttribute="top" secondItem="18Z-1V-Fsn" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="qIf-H9-R0a"/>
                         </constraints>
@@ -210,6 +210,7 @@
                                         <constraints>
                                             <constraint firstItem="CVA-Un-KPM" firstAttribute="leading" secondItem="3hh-VT-GUw" secondAttribute="leading" constant="18" id="OE4-sg-v2O"/>
                                             <constraint firstAttribute="trailing" secondItem="KbF-bp-NCE" secondAttribute="trailing" constant="19" id="PRg-52-EUy"/>
+                                            <constraint firstItem="KbF-bp-NCE" firstAttribute="top" secondItem="CVA-Un-KPM" secondAttribute="top" type="default" id="SWi-mb-w5a"/>
                                             <constraint firstItem="KbF-bp-NCE" firstAttribute="bottom" secondItem="CVA-Un-KPM" secondAttribute="bottom" type="default" id="eh9-ny-TyX"/>
                                             <constraint firstItem="CVA-Un-KPM" firstAttribute="centerY" secondItem="3hh-VT-GUw" secondAttribute="centerY" type="default" id="qsv-s7-BQG"/>
                                         </constraints>
@@ -225,22 +226,22 @@
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Meaningful title..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ptS-02-aCo">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Meaningful title..." minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ptS-02-aCo">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="280" id="1xA-Vd-PEM"/>
-                                                        <constraint firstAttribute="height" constant="30" id="eEo-Wf-2dp"/>
+                                                        <constraint firstAttribute="width" constant="280" id="6wo-Ef-z1H"/>
+                                                        <constraint firstAttribute="height" constant="31" id="Ie7-6H-HhT"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                                     <connections>
-                                                        <action selector="resignKeyboard:" destination="03t-ou-Fpi" eventType="editingDidEndOnExit" id="R3D-ae-Cv5"/>
+                                                        <action selector="switchFieldOrSave:" destination="03t-ou-Fpi" eventType="editingDidEndOnExit" id="iW9-qd-EjH"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="ptS-02-aCo" firstAttribute="leading" secondItem="yVN-Fo-BOh" secondAttribute="leading" constant="30" id="aTE-dF-Wqb"/>
+                                            <constraint firstItem="ptS-02-aCo" firstAttribute="leading" secondItem="yVN-Fo-BOh" secondAttribute="leading" constant="30" id="R3j-Bb-b8E"/>
                                             <constraint firstItem="ptS-02-aCo" firstAttribute="centerY" secondItem="yVN-Fo-BOh" secondAttribute="centerY" type="default" id="lrN-PU-zyu"/>
                                         </constraints>
                                     </tableViewCell>
@@ -251,23 +252,23 @@
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="How much did it cost..." minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="j5A-bj-vs5">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="How much did it cost..." minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="j5A-bj-vs5">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="280" id="Xh4-2m-kFo"/>
-                                                        <constraint firstAttribute="height" constant="30" id="h2L-62-RzF"/>
+                                                        <constraint firstAttribute="height" constant="31" id="Dwx-r0-Dqr"/>
+                                                        <constraint firstAttribute="width" constant="280" id="VmC-WG-2Yr"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                                                     <connections>
-                                                        <action selector="resignKeyboard:" destination="03t-ou-Fpi" eventType="editingDidEndOnExit" id="KoK-PT-vpW"/>
+                                                        <action selector="switchFieldOrSave:" destination="03t-ou-Fpi" eventType="editingDidEndOnExit" id="qXj-yq-mhx"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="j5A-bj-vs5" firstAttribute="leading" secondItem="Fjb-dc-nC7" secondAttribute="leading" constant="30" id="iuz-0e-2Zj"/>
-                                            <constraint firstItem="j5A-bj-vs5" firstAttribute="top" secondItem="Fjb-dc-nC7" secondAttribute="top" constant="6" id="umv-zf-M99"/>
+                                            <constraint firstItem="j5A-bj-vs5" firstAttribute="top" secondItem="Fjb-dc-nC7" secondAttribute="top" constant="6" id="4nu-Le-hCa"/>
+                                            <constraint firstItem="j5A-bj-vs5" firstAttribute="leading" secondItem="Fjb-dc-nC7" secondAttribute="leading" constant="30" id="y6l-o5-lpX"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>
@@ -402,6 +403,7 @@
                 <relationship kind="action" name="editSaveButtonPressed:"/>
                 <relationship kind="action" name="imageFromCamera:"/>
                 <relationship kind="action" name="resignKeyboard:"/>
+                <relationship kind="action" name="switchFieldOrSave:"/>
                 <relationship kind="outlet" name="amountField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="imageField" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="titleField" candidateClass="UITextField"/>
@@ -424,6 +426,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="ur4-Np-Ldj"/>
-        <segue reference="Nol-he-AUh"/>
+        <segue reference="pOI-kx-aqR"/>
     </inferredMetricsTieBreakers>
 </document>
