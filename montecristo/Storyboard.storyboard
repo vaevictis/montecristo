@@ -116,7 +116,7 @@
             </objects>
             <point key="canvasLocation" x="908" y="172"/>
         </scene>
-        <!--Expenses Controller-->
+        <!--Expenses Controller - Expenses-->
         <scene sceneID="9re-fC-Dqt">
             <objects>
                 <tableViewController id="sEW-eb-kS0" customClass="ExpensesController" sceneMemberID="viewController">
@@ -155,7 +155,7 @@
                             <outlet property="delegate" destination="sEW-eb-kS0" id="pcZ-5J-tpO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="d3B-mj-T5e">
+                    <navigationItem key="navigationItem" title="Expenses" id="d3B-mj-T5e">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="rDl-IY-1b9">
                             <connections>
                                 <segue destination="03t-ou-Fpi" kind="push" identifier="AddExpense" id="Nol-he-AUh"/>
@@ -175,23 +175,35 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <pickerView key="tableFooterView" contentMode="scaleToFill" id="neE-Mn-FIN">
+                            <rect key="frame" x="0.0" y="199" width="320" height="216"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <connections>
+                                <outlet property="dataSource" destination="03t-ou-Fpi" id="JgR-Fv-9vh"/>
+                                <outlet property="delegate" destination="03t-ou-Fpi" id="SM5-gj-a4d"/>
+                            </connections>
+                        </pickerView>
                         <sections>
                             <tableViewSection id="rOm-nZ-0yS">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" rowHeight="116" id="3hh-VT-GUw">
-                                        <rect key="frame" x="0.0" y="10" width="320" height="118"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" rowHeight="89" id="3hh-VT-GUw">
+                                        <rect key="frame" x="0.0" y="10" width="320" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="115"/>
+                                            <rect key="frame" x="10" y="1" width="300" height="88"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CVA-Un-KPM">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="88" id="La1-sx-2Hy"/>
-                                                        <constraint firstAttribute="height" constant="97" id="f6F-1R-KQB"/>
+                                                        <constraint firstAttribute="width" constant="63" id="A21-WW-R7V"/>
+                                                        <constraint firstAttribute="height" constant="71" id="rRf-sv-ZQw"/>
                                                     </constraints>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KbF-bp-NCE">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="102" id="ZOK-6a-HXH"/>
+                                                        <constraint firstAttribute="height" constant="34" id="lNT-rj-g4b"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <state key="normal" title="Take photo">
                                                         <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -208,22 +220,17 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="KbF-bp-NCE" secondAttribute="bottom" constant="10" id="M9V-0I-IZD"/>
                                             <constraint firstItem="CVA-Un-KPM" firstAttribute="leading" secondItem="3hh-VT-GUw" secondAttribute="leading" constant="18" id="OE4-sg-v2O"/>
                                             <constraint firstAttribute="trailing" secondItem="KbF-bp-NCE" secondAttribute="trailing" constant="19" id="PRg-52-EUy"/>
-                                            <constraint firstItem="KbF-bp-NCE" firstAttribute="top" secondItem="CVA-Un-KPM" secondAttribute="top" type="default" id="SWi-mb-w5a"/>
-                                            <constraint firstItem="KbF-bp-NCE" firstAttribute="bottom" secondItem="CVA-Un-KPM" secondAttribute="bottom" type="default" id="eh9-ny-TyX"/>
-                                            <constraint firstItem="CVA-Un-KPM" firstAttribute="centerY" secondItem="3hh-VT-GUw" secondAttribute="centerY" type="default" id="qsv-s7-BQG"/>
+                                            <constraint firstItem="CVA-Un-KPM" firstAttribute="top" secondItem="3hh-VT-GUw" secondAttribute="top" constant="11" id="gS4-zU-9Sf"/>
                                         </constraints>
                                     </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection id="K94-gA-Bqy">
-                                <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="yVN-Fo-BOh">
-                                        <rect key="frame" x="0.0" y="148" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="100" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Meaningful title..." minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ptS-02-aCo">
@@ -241,12 +248,12 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="ptS-02-aCo" firstAttribute="top" secondItem="yVN-Fo-BOh" secondAttribute="top" constant="6" id="Jxp-l0-SFs"/>
                                             <constraint firstItem="ptS-02-aCo" firstAttribute="leading" secondItem="yVN-Fo-BOh" secondAttribute="leading" constant="30" id="R3j-Bb-b8E"/>
-                                            <constraint firstItem="ptS-02-aCo" firstAttribute="centerY" secondItem="yVN-Fo-BOh" secondAttribute="centerY" type="default" id="lrN-PU-zyu"/>
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Fjb-dc-nC7">
-                                        <rect key="frame" x="0.0" y="193" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="144" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
@@ -267,7 +274,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="j5A-bj-vs5" firstAttribute="top" secondItem="Fjb-dc-nC7" secondAttribute="top" constant="6" id="4nu-Le-hCa"/>
+                                            <constraint firstItem="j5A-bj-vs5" firstAttribute="top" secondItem="Fjb-dc-nC7" secondAttribute="top" constant="6" id="hgM-tF-MB4"/>
                                             <constraint firstItem="j5A-bj-vs5" firstAttribute="leading" secondItem="Fjb-dc-nC7" secondAttribute="leading" constant="30" id="y6l-o5-lpX"/>
                                         </constraints>
                                     </tableViewCell>
@@ -290,6 +297,7 @@
                         <outlet property="amountField" destination="j5A-bj-vs5" id="8e9-NO-kmm"/>
                         <outlet property="imageField" destination="CVA-Un-KPM" id="1bz-08-Qrq"/>
                         <outlet property="titleField" destination="ptS-02-aCo" id="trh-X3-aUX"/>
+                        <outlet property="userPicker" destination="neE-Mn-FIN" id="O8T-oU-VIL"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qfw-vq-asw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -402,11 +410,11 @@
             <relationships>
                 <relationship kind="action" name="editSaveButtonPressed:"/>
                 <relationship kind="action" name="imageFromCamera:"/>
-                <relationship kind="action" name="resignKeyboard:"/>
                 <relationship kind="action" name="switchFieldOrSave:"/>
                 <relationship kind="outlet" name="amountField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="imageField" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="imageField" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="titleField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="userPicker" candidateClass="UIPickerView"/>
             </relationships>
         </class>
         <class className="ExpensesController" superclassName="UITableViewController">

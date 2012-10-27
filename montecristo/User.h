@@ -1,18 +1,21 @@
-//
-//  User.h
-//  montecristo
-//
-//  Created by vaevictis on 21/10/12.
-//  Copyright (c) 2012 boost. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class Expense;
 
 @interface User : NSManagedObject
 
-@property (nonatomic, retain) NSString * password;
 @property (nonatomic, retain) NSString * username;
+@property (nonatomic, retain) NSSet *expenses;
+
+@end
+
+@interface User (CoreDataGeneratedAccessors)
+
+- (void)addExpensesObject:(Expense *)value;
+- (void)removeExpensesObject:(Expense *)value;
+- (void)addExpenses:(NSSet *)values;
+- (void)removeExpenses:(NSSet *)values;
+- (void)computeTotalExpenses;
 
 @end

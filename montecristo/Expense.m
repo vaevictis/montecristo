@@ -1,13 +1,6 @@
-//
-//  Expense.m
-//  montecristo
-//
-//  Created by vaevictis on 21/10/12.
-//  Copyright (c) 2012 boost. All rights reserved.
-//
-
 #import "Expense.h"
 #import "Category.h"
+#import "User.h"
 
 
 @implementation Expense
@@ -17,5 +10,6 @@
 @dynamic amount;
 @dynamic category;
 @dynamic picture;
+@dynamic user;
 
 @end

@@ -1,5 +1,7 @@
 #import "ExpenseDetail.h"
 #import "Category.h"
+#import "CoreDataHelper.h"
+#import "User.h"
 
 @implementation ExpenseDetail
 
@@ -7,6 +9,8 @@
 @synthesize currentExpense, currentCategory;
 @synthesize titleField, amountField, imageField;
 @synthesize imagePicker;
+@synthesize usersData;
+@synthesize userPicker;
 
 #pragma mark - View lifecycle
 
@@ -14,17 +18,18 @@
 {
     [super viewDidLoad];
 
+    usersData  = [CoreDataHelper getObjectsForEntity:@"User" withSortKey:@"username" andSortAscending:YES andContext:managedObjectContext];
+
     if (currentExpense)
     {
         [titleField setText:[currentExpense title]];
         [amountField setText:[currentExpense.amount stringValue]];
 
-        self.title = [NSString stringWithFormat: @"Edit %@ expense", currentCategory.title];
+        NSUInteger row = [usersData indexOfObject:currentExpense.user];
+        [userPicker selectRow:row inComponent:0 animated:NO];
 
         if ([currentExpense picture])
             [imageField setImage:[UIImage imageWithData:[currentExpense picture]]];
-    } else {
-        self.title = [NSString stringWithFormat: @"New %@ expense", currentCategory.title];
     }
 }
 
@@ -126,4 +131,31 @@
     [imagePicker dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark - PickerView DataSource
+
+- (NSInteger)numberOfComponentsInPickerView:
+(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView
+numberOfRowsInComponent:(NSInteger)component
+{
+    return [usersData count];
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView
+             titleForRow:(NSInteger)row
+            forComponent:(NSInteger)component
+{
+    return [[usersData objectAtIndex:row] username];
+}
+
+#pragma mark - PickerView Delegate
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row
+      inComponent:(NSInteger)component
+{
+    [self.currentExpense setUser:[usersData objectAtIndex:row]];
+}
 @end

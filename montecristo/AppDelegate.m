@@ -1,7 +1,6 @@
 #import "AppDelegate.h"
 #import "User.h"
 #import "Category.h"
-#import "LoginViewController.h"
 #import "CategoriesController.h"
 
 @implementation AppDelegate
@@ -28,8 +27,10 @@
 
         // Add our default user object in Core Data
         User *user = (User *)[NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.managedObjectContext];
-        [user setUsername:@"admin"];
-        [user setPassword:@"password"];
+        [user setUsername:@"Sylvain"];
+
+        User *otherUser = (User *)[NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.managedObjectContext];
+        otherUser.username = @"Guillaume";
 
 
         // Add default categories
@@ -134,7 +135,7 @@
     
     NSError *error = nil;
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
+    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options: @{NSMigratePersistentStoresAutomaticallyOption:@YES, NSInferMappingModelAutomaticallyOption:@YES} error:&error]) {
         /*
          Replace this implementation with code to handle the error appropriately.
          

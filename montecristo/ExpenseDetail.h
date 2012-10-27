@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 #import "Expense.h"
 
-@interface ExpenseDetail : UITableViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface ExpenseDetail : UITableViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
@@ -14,4 +14,6 @@
 
 @property (strong, nonatomic) UIImagePickerController *imagePicker;
 
+@property (strong, nonatomic) NSArray *usersData;
+@property (strong, nonatomic) IBOutlet UIPickerView *userPicker;
 @end

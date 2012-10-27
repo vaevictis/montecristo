@@ -8,6 +8,7 @@
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSSet *expenses;
 @property (nonatomic, retain) NSNumber *totalExpenses;
+
 @end
 
 @interface Category (CoreDataGeneratedAccessors)
