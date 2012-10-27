@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D61FA68163C15B3008BCEAC /* UserDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D61FA67163C15B3008BCEAC /* UserDetail.m */; };
 		9D82690316336D6C0000217A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D82690216336D6C0000217A /* UIKit.framework */; };
 		9D82690516336D6C0000217A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D82690416336D6C0000217A /* Foundation.framework */; };
 		9D82690716336D6C0000217A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D82690616336D6C0000217A /* CoreGraphics.framework */; };
@@ -31,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D61FA66163C15B3008BCEAC /* UserDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetail.h; sourceTree = "<group>"; };
+		9D61FA67163C15B3008BCEAC /* UserDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetail.m; sourceTree = "<group>"; };
 		9D8268FE16336D6C0000217A /* montecristo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = montecristo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D82690216336D6C0000217A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9D82690416336D6C0000217A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -127,6 +130,8 @@
 				9DE85567163414D200EF74C6 /* ExpenseDetail.m */,
 				9DB13DDB163BD8A8005A93F8 /* UsersController.h */,
 				9DB13DDC163BD8A8005A93F8 /* UsersController.m */,
+				9D61FA66163C15B3008BCEAC /* UserDetail.h */,
+				9D61FA67163C15B3008BCEAC /* UserDetail.m */,
 			);
 			path = montecristo;
 			sourceTree = "<group>";
@@ -242,6 +247,7 @@
 				9DE8556516340A9F00EF74C6 /* ExpensesController.m in Sources */,
 				9DE85568163414D200EF74C6 /* ExpenseDetail.m in Sources */,
 				9DB13DDD163BD8A8005A93F8 /* UsersController.m in Sources */,
+				9D61FA68163C15B3008BCEAC /* UserDetail.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

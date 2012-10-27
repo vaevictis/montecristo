@@ -3,6 +3,7 @@
 #import "ExpensesController.h"
 #import "User.h"
 #import "Expense.h"
+#import "UserDetail.h"
 
 
 @interface UsersController ()
@@ -96,6 +97,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             NSLog(@"Failed to delete category item with error: %@", [error domain]);
 
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self computeOverallExpenses];
+        [self computeUsersExpenses];
     }
 }
 
@@ -124,6 +127,23 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     NSNumber *grandTotal = [NSNumber numberWithFloat:total];
 
     self.overallExpenses = grandTotal;
+}
+
+#pragma mark - segues handling
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    UserDetail *userDetail = (UserDetail *)[segue destinationViewController];
+
+    userDetail.managedObjectContext = managedObjectContext;
+
+    if ([[segue identifier] isEqualToString:@"EditUser"])
+    {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        NSInteger selectedIndex = [indexPath row];
+
+        userDetail.currentUser = [usersData objectAtIndex:selectedIndex];
+    }
 }
 
 @end

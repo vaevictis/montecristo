@@ -102,18 +102,8 @@
     if ([[segue identifier] isEqualToString:@"Users"]) {
         UsersController *usersController = (UsersController *)[segue destinationViewController];
         usersController.managedObjectContext = self.managedObjectContext;
-//        [self computeUsersExpenses];
 
     }
 }
-
-//-(void)computeUsersExpenses
-//{
-//    NSArray *usersData = [CoreDataHelper getObjectsForEntity:@"User" withSortKey:@"username" andSortAscending:YES andContext:managedObjectContext];
-//
-//    for (User *user in usersData) {
-//        [user computeTotalExpenses];
-//    }
-//}
 
 @end

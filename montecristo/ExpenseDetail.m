@@ -169,6 +169,7 @@ numberOfRowsInComponent:(NSInteger)component
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row
       inComponent:(NSInteger)component
 {
-    self.selectedUser = [usersData objectAtIndex:row];
+    if (row != 0)
+        self.selectedUser = [usersData objectAtIndex:row - 1];
 }
 @end
