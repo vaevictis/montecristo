@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		9D61FA68163C15B3008BCEAC /* UserDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D61FA67163C15B3008BCEAC /* UserDetail.m */; };
+		9D61FA6A163C1E35008BCEAC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D61FA69163C1E34008BCEAC /* Default.png */; };
+		9D61FA6C163C1E38008BCEAC /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D61FA6B163C1E38008BCEAC /* Default@2x.png */; };
+		9D61FA6E163C1E3B008BCEAC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D61FA6D163C1E3B008BCEAC /* Default-568h@2x.png */; };
+		9D61FA70163C1ED0008BCEAC /* Notes.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D61FA6F163C1ED0008BCEAC /* Notes.png */; };
+		9D61FA72163C1F50008BCEAC /* Notes2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D61FA71163C1F4F008BCEAC /* Notes2x.png */; };
 		9D82690316336D6C0000217A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D82690216336D6C0000217A /* UIKit.framework */; };
 		9D82690516336D6C0000217A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D82690416336D6C0000217A /* Foundation.framework */; };
 		9D82690716336D6C0000217A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D82690616336D6C0000217A /* CoreGraphics.framework */; };
@@ -34,6 +39,11 @@
 /* Begin PBXFileReference section */
 		9D61FA66163C15B3008BCEAC /* UserDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetail.h; sourceTree = "<group>"; };
 		9D61FA67163C15B3008BCEAC /* UserDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetail.m; sourceTree = "<group>"; };
+		9D61FA69163C1E34008BCEAC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		9D61FA6B163C1E38008BCEAC /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		9D61FA6D163C1E3B008BCEAC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		9D61FA6F163C1ED0008BCEAC /* Notes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Notes.png; sourceTree = "<group>"; };
+		9D61FA71163C1F4F008BCEAC /* Notes2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Notes2x.png; sourceTree = "<group>"; };
 		9D8268FE16336D6C0000217A /* montecristo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = montecristo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D82690216336D6C0000217A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9D82690416336D6C0000217A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -88,6 +98,11 @@
 		9D8268F316336D6B0000217A = {
 			isa = PBXGroup;
 			children = (
+				9D61FA71163C1F4F008BCEAC /* Notes2x.png */,
+				9D61FA6F163C1ED0008BCEAC /* Notes.png */,
+				9D61FA6D163C1E3B008BCEAC /* Default-568h@2x.png */,
+				9D61FA6B163C1E38008BCEAC /* Default@2x.png */,
+				9D61FA69163C1E34008BCEAC /* Default.png */,
 				9D82690A16336D6C0000217A /* montecristo */,
 				9D82692416336E410000217A /* core data */,
 				9D82690116336D6C0000217A /* Frameworks */,
@@ -225,6 +240,11 @@
 				9D82691916336D6C0000217A /* Default@2x.png in Resources */,
 				9D82691B16336D6C0000217A /* Default-568h@2x.png in Resources */,
 				9DE855561633710100EF74C6 /* Storyboard.storyboard in Resources */,
+				9D61FA6A163C1E35008BCEAC /* Default.png in Resources */,
+				9D61FA6C163C1E38008BCEAC /* Default@2x.png in Resources */,
+				9D61FA6E163C1E3B008BCEAC /* Default-568h@2x.png in Resources */,
+				9D61FA70163C1ED0008BCEAC /* Notes.png in Resources */,
+				9D61FA72163C1F50008BCEAC /* Notes2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
