@@ -25,8 +25,10 @@
         [titleField setText:[currentExpense title]];
         [amountField setText:[currentExpense.amount stringValue]];
 
-        NSUInteger row = [usersData indexOfObject:currentExpense.user];
-        [userPicker selectRow:row inComponent:0 animated:NO];
+        if ([currentExpense user]) {
+            NSUInteger row = [usersData indexOfObject:currentExpense.user];
+            [userPicker selectRow:row inComponent:0 animated:NO];
+        }
 
         if ([currentExpense picture])
             [imageField setImage:[UIImage imageWithData:[currentExpense picture]]];

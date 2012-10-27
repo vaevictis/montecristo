@@ -14,12 +14,13 @@
         <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="expenses" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="totalExpenses" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="expenses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Expense" inverseName="user" inverseEntity="Expense" syncable="YES"/>
     </entity>
     <elements>
         <element name="Category" positionX="160" positionY="192" width="128" height="90"/>
         <element name="Expense" positionX="160" positionY="192" width="128" height="135"/>
-        <element name="User" positionX="160" positionY="192" width="128" height="75"/>
+        <element name="User" positionX="160" positionY="192" width="128" height="90"/>
     </elements>
 </model>

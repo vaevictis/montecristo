@@ -34,8 +34,8 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="tmB-et-AEs" kind="push" identifier="EditCategory" trigger="accessoryAction" id="ur4-Np-Ldj"/>
                                     <segue destination="sEW-eb-kS0" kind="push" identifier="Expenses" id="iTe-zr-NDm"/>
+                                    <segue destination="tmB-et-AEs" kind="push" identifier="EditCategory" trigger="accessoryAction" id="5Yq-1Z-TcH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -110,6 +110,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="customView" destination="kJw-3c-imd" id="ZmC-kc-KGS"/>
                         <outlet property="overallExpensesField" destination="77n-gd-11c" id="B32-MS-ZpC"/>
                     </connections>
                 </viewController>
@@ -330,7 +331,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
-                                                        <action selector="resignKeyboard:" destination="tmB-et-AEs" eventType="editingDidEndOnExit" id="Le2-oR-iK2"/>
+                                                        <action selector="doneEditing:" destination="tmB-et-AEs" eventType="editingDidEndOnExit" id="F2M-aW-bmT"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -388,20 +389,19 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BalanceController.h"/>
             <relationships>
                 <relationship kind="action" name="backToCategoriesButtonPressed:"/>
+                <relationship kind="outlet" name="customView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="overallExpensesField" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="view" candidateClass="UIView"/>
             </relationships>
         </class>
         <class className="CategoriesController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CategoriesController.h"/>
-            <relationships>
-                <relationship kind="action" name="logoutButtonPressed:"/>
-            </relationships>
         </class>
         <class className="CategoryDetail" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CategoryDetail.h"/>
             <relationships>
+                <relationship kind="action" name="doneEditing:"/>
                 <relationship kind="action" name="editSaveButtonPressed:"/>
-                <relationship kind="action" name="resignKeyboard:"/>
                 <relationship kind="outlet" name="titleField" candidateClass="UITextField"/>
             </relationships>
         </class>
@@ -433,7 +433,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="ur4-Np-Ldj"/>
+        <segue reference="5Yq-1Z-TcH"/>
         <segue reference="pOI-kx-aqR"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -12,7 +12,6 @@
 {
     [super viewDidLoad];
 
-    // If we are editing an existing Category, then put the details from Core Data into the text fields for displaying
     if (currentCategory)
     {
         self.title      = [NSString stringWithFormat: @"Edit %@ category", currentCategory.title];
@@ -22,15 +21,13 @@
     }
 }
 
-#pragma mark - Button actions
+#pragma mark - Core Data lifecycle
 
-- (IBAction)editSaveButtonPressed:(id)sender
+- (void)performSave
 {
-    // If we are adding a new Category (because we didnt pass one from the table) then create an entry
     if (!currentCategory)
         self.currentCategory = (Category *)[NSEntityDescription insertNewObjectForEntityForName:@"Category" inManagedObjectContext:self.managedObjectContext];
 
-    // For both new and existing Categorys, fill in the details from the form
     [self.currentCategory setTitle:[titleField text]];
 
     //  Commit item to core data
@@ -42,10 +39,19 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-//  Resign the keyboard after Done is pressed when editing text fields
-- (IBAction)resignKeyboard:(id)sender
+
+#pragma mark - Button actions
+
+
+- (IBAction)editSaveButtonPressed:(id)sender
+{
+    [self performSave];
+}
+
+-(IBAction)doneEditing:(id)sender
 {
     [sender resignFirstResponder];
+    [self performSave];
 }
 
 @end

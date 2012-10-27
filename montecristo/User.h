@@ -7,6 +7,7 @@
 
 @property (nonatomic, retain) NSString * username;
 @property (nonatomic, retain) NSSet *expenses;
+@property (nonatomic, retain) NSNumber *totalExpenses;
 
 @end
 
@@ -16,6 +17,7 @@
 - (void)removeExpensesObject:(Expense *)value;
 - (void)addExpenses:(NSSet *)values;
 - (void)removeExpenses:(NSSet *)values;
+
 - (void)computeTotalExpenses;
 
 @end
