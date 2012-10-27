@@ -15,7 +15,7 @@
 @dynamic title;
 @dynamic totalExpenses;
 
-- (void)getTotalExpenses
+- (void)computeTotalExpenses
 {
     NSNumber *totalExpenses = [self valueForKeyPath:@"expenses.@sum.amount"];
     self.totalExpenses = totalExpenses;

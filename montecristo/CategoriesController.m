@@ -3,6 +3,7 @@
 #import "CoreDataHelper.h"
 #import "CategoryDetail.h"
 #import "ExpensesController.h"
+#import "BalanceController.h"
 
 @implementation CategoriesController
 
@@ -59,7 +60,7 @@
 
     // Get the core data object we need to use to populate this table cell
     Category *currentCell = [categoriesData objectAtIndex:indexPath.row];
-    [currentCell getTotalExpenses];
+    [currentCell computeTotalExpenses];
 
     //  Fill in the cell contents
     cell.textLabel.text = [currentCell title];
@@ -121,6 +122,11 @@
 
         //  Pass the category object from the table that we want to view
         expensesController.currentCategory = [categoriesData objectAtIndex:selectedIndex];
+    }
+
+    if ([[segue identifier] isEqualToString:@"Balance"]) {
+        BalanceController *balanceController = (BalanceController *)[segue destinationViewController];
+        balanceController.managedObjectContext = self.managedObjectContext;
     }
 }
 

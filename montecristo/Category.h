@@ -16,6 +16,6 @@
 - (void)removeExpensesObject:(Expense *)value;
 - (void)addExpenses:(NSSet *)values;
 - (void)removeExpenses:(NSSet *)values;
-- (void)getTotalExpenses;
+- (void)computeTotalExpenses;
 
 @end

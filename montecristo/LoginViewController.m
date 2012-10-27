@@ -4,7 +4,6 @@
 
 @implementation LoginViewController
 
-//  Synthesize accessors
 @synthesize managedObjectContext, usernameField, passwordField;
 
 //  When we are done editing on the keyboard

@@ -18,6 +18,7 @@
 		9D82691916336D6C0000217A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D82691816336D6C0000217A /* Default@2x.png */; };
 		9D82691B16336D6C0000217A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D82691A16336D6C0000217A /* Default-568h@2x.png */; };
 		9D82691E16336D6C0000217A /* montecristo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D82691C16336D6C0000217A /* montecristo.xcdatamodeld */; };
+		9DB13DD7163B5892005A93F8 /* BalanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB13DD6163B5892005A93F8 /* BalanceController.m */; };
 		9DE8554D1633706900EF74C6 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE8554C1633706900EF74C6 /* Category.m */; };
 		9DE855511633706A00EF74C6 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE855501633706A00EF74C6 /* User.m */; };
 		9DE855541633708D00EF74C6 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE855531633708D00EF74C6 /* CoreDataHelper.m */; };
@@ -46,6 +47,8 @@
 		9D82691816336D6C0000217A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		9D82691A16336D6C0000217A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9D82691D16336D6C0000217A /* montecristo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = montecristo.xcdatamodel; sourceTree = "<group>"; };
+		9DB13DD5163B5892005A93F8 /* BalanceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BalanceController.h; sourceTree = "<group>"; };
+		9DB13DD6163B5892005A93F8 /* BalanceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BalanceController.m; sourceTree = "<group>"; };
 		9DE8554B1633706900EF74C6 /* Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
 		9DE8554C1633706900EF74C6 /* Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
 		9DE8554F1633706A00EF74C6 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -127,6 +130,8 @@
 				9DE8556416340A9F00EF74C6 /* ExpensesController.m */,
 				9DE85566163414D200EF74C6 /* ExpenseDetail.h */,
 				9DE85567163414D200EF74C6 /* ExpenseDetail.m */,
+				9DB13DD5163B5892005A93F8 /* BalanceController.h */,
+				9DB13DD6163B5892005A93F8 /* BalanceController.m */,
 			);
 			path = montecristo;
 			sourceTree = "<group>";
@@ -242,6 +247,7 @@
 				9DE85562163397BA00EF74C6 /* Expense.m in Sources */,
 				9DE8556516340A9F00EF74C6 /* ExpensesController.m in Sources */,
 				9DE85568163414D200EF74C6 /* ExpenseDetail.m in Sources */,
+				9DB13DD7163B5892005A93F8 /* BalanceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
