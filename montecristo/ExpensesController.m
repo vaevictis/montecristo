@@ -21,12 +21,11 @@
 - (void)readDataForTable
 {
     //  Grab the data
-//    expensesData = [CoreDataHelper getObjectsForEntity:@"Expense" withSortKey:@"timestamp" andSortAscending:NO andContext:managedObjectContext];
     NSPredicate *categoryExpenses = [NSPredicate predicateWithFormat:@"category == %@", currentCategory];
 
     expensesData = [CoreDataHelper searchObjectsForEntity:@"Expense"
                                             withPredicate:categoryExpenses
-                                               andSortKey:@"title"
+                                               andSortKey:@"timestamp"
                                          andSortAscending:NO
                                                andContext:managedObjectContext];
 

@@ -67,10 +67,15 @@
 
 -(void)performSaveAndExit
 {
-    if (!currentExpense)
+    if (!currentExpense) {
         self.currentExpense = (Expense *)[NSEntityDescription insertNewObjectForEntityForName:@"Expense" inManagedObjectContext:self.managedObjectContext];
 
+        NSDate *now = [[NSDate alloc] init];
+        [self.currentExpense setTimestamp:now];
+    }
+
     [self.currentExpense setTitle:[titleField text]];
+
 
     NSNumberFormatter *amountFormatter = [[NSNumberFormatter alloc] init];
     [amountFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
@@ -104,10 +109,6 @@
     UITextField *tf = (UITextField *)sender;
     if (tf.tag == 1) {
         [amountField becomeFirstResponder];
-//        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:1];
-//        [self.tableView scrollToRowAtIndexPath:indexPath
-//                              atScrollPosition:UITableViewScrollPositionTop
-//                                      animated:YES];
     } else {
         [sender resignFirstResponder];
     }
