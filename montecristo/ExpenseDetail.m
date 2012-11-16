@@ -27,8 +27,8 @@
         [amountField setText:[currentExpense.amount stringValue]];
 
         if ([currentExpense user]) {
-            NSUInteger row = [usersData indexOfObject:currentExpense.user];
-            [userPicker selectRow:row inComponent:0 animated:NO];
+            NSUInteger offsetRow = [usersData indexOfObject:currentExpense.user] + 1;
+            [userPicker selectRow:offsetRow inComponent:0 animated:NO];
         }
 
         if ([currentExpense picture])
