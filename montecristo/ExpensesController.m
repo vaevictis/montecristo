@@ -78,7 +78,7 @@
                                  [currentExpense.amount stringValue],
                                  [currentExpense.user username],
                                  [NSDateFormatter localizedStringFromDate:currentExpense.timestamp
-                                                                dateStyle:NSDateFormatterMediumStyle
+                                                                dateStyle:NSDateFormatterLongStyle
                                                                 timeStyle:NSDateFormatterNoStyle]];
 
     //  If a picture exists then use it
