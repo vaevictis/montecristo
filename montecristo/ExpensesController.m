@@ -3,6 +3,7 @@
 #import "CoreDataHelper.h"
 #import "ExpenseDetail.h"
 #import "Category.h"
+#import "User.h"
 
 @implementation ExpensesController
 
@@ -56,13 +57,15 @@
 }
 
 //  Create / reuse a table cell and configure it for display
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                      reuseIdentifier:CellIdentifier];
     }
 
     // Get the core data object we need to use to populate this table cell
@@ -70,7 +73,13 @@
 
     //  Fill in the cell contents
     cell.textLabel.text = currentExpense.title;
-    cell.detailTextLabel.text = [currentExpense.amount stringValue];
+
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ by %@ on %@",
+                                 [currentExpense.amount stringValue],
+                                 [currentExpense.user username],
+                                 [NSDateFormatter localizedStringFromDate:currentExpense.timestamp
+                                                                dateStyle:NSDateFormatterMediumStyle
+                                                                timeStyle:NSDateFormatterNoStyle]];
 
     //  If a picture exists then use it
     if ([currentExpense picture])
@@ -82,8 +91,10 @@
     return cell;
 }
 
-//  Swipe to delete has been used.  Remove the table item
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+//  Swipe to delete has been used. Remove the table item
+- (void)tableView:(UITableView *)tableView
+commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
