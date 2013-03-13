@@ -81,13 +81,6 @@
                                                                 dateStyle:NSDateFormatterLongStyle
                                                                 timeStyle:NSDateFormatterNoStyle]];
 
-    //  If a picture exists then use it
-    if ([currentExpense picture])
-    {
-        cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
-        cell.imageView.image = [UIImage imageWithData:[currentExpense picture]];
-    }
-
     return cell;
 }
 

@@ -10,7 +10,6 @@
 @property (nonatomic, retain) NSString  * title;
 @property (nonatomic, retain) NSNumber  * amount;
 @property (nonatomic, retain) Category  * category;
-@property (nonatomic, retain) NSData    * picture;
 @property (nonatomic, retain) User      * user;
 
 @end

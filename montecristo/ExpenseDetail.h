@@ -11,9 +11,6 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *titleField;
 @property (strong, nonatomic) IBOutlet UITextField *amountField;
-@property (strong, nonatomic) IBOutlet UIImageView *imageField;
-
-@property (strong, nonatomic) UIImagePickerController *imagePicker;
 
 @property (strong, nonatomic) NSArray *usersData;
 @property (strong, nonatomic) IBOutlet UIPickerView *userPicker;

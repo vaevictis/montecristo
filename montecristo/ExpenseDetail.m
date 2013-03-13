@@ -7,8 +7,7 @@
 
 @synthesize managedObjectContext;
 @synthesize currentExpense, currentCategory;
-@synthesize titleField, amountField, imageField;
-@synthesize imagePicker;
+@synthesize titleField, amountField;
 @synthesize usersData;
 @synthesize userPicker;
 @synthesize selectedUser;
@@ -30,37 +29,7 @@
             NSUInteger offsetRow = [usersData indexOfObject:currentExpense.user] + 1;
             [userPicker selectRow:offsetRow inComponent:0 animated:NO];
         }
-
-        if ([currentExpense picture])
-            [imageField setImage:[UIImage imageWithData:[currentExpense picture]]];
     }
-}
-
-#pragma mark - Image editing
-
-- (void)resizeAndSaveImage
-{
-    float resize = 74.0;
-    float actualWidth = imageField.image.size.width;
-    float actualHeight = imageField.image.size.height;
-    float divBy, newWidth, newHeight;
-    if (actualWidth > actualHeight) {
-        divBy = (actualWidth / resize);
-        newWidth = resize;
-        newHeight = (actualHeight / divBy);
-    } else {
-        divBy = (actualHeight / resize);
-        newWidth = (actualWidth / divBy);
-        newHeight = resize;
-    }
-    CGRect rect = CGRectMake(0.0, 0.0, newWidth, newHeight);
-    UIGraphicsBeginImageContext(rect.size);
-    [imageField.image drawInRect:rect];
-    UIImage *smallImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    NSData *imageData = UIImageJPEGRepresentation(smallImage, 1.0);
-    [self.currentExpense setPicture:imageData];
 }
 
 #pragma mark - Saving
@@ -87,11 +56,6 @@
     self.currentExpense.category = currentCategory;
     self.currentExpense.user = selectedUser;
 
-    if (imageField.image)
-    {
-        [self resizeAndSaveImage];
-    }
-
     NSError *error;
     if (![self.managedObjectContext save:&error]) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Have you checked your entries?"
@@ -104,6 +68,7 @@
         [self.navigationController popViewControllerAnimated:YES];
     }
 }
+
 
 #pragma mark - Button actions
 
@@ -122,27 +87,6 @@
     [self performSaveAndExit];
 }
 
-- (IBAction)imageFromCamera:(id)sender
-{
-    imagePicker = [[UIImagePickerController alloc] init];
-    imagePicker.delegate = self;
-    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    imagePicker.cameraDevice = UIImagePickerControllerCameraDeviceRear;
-    [self presentViewController:imagePicker animated:YES completion:nil];
-}
-
-#pragma mark - Image Picker Delegate Methods
-
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo
-{
-    [imagePicker dismissModalViewControllerAnimated:YES];
-    [imageField setImage:image];
-}
-
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
-{
-    [imagePicker dismissViewControllerAnimated:YES completion:nil];
-}
 
 #pragma mark - PickerView DataSource
 
@@ -168,6 +112,7 @@ numberOfRowsInComponent:(NSInteger)component
         return [[usersData objectAtIndex:row - 1] username];
     }
 }
+
 
 #pragma mark - PickerView Delegate
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row
