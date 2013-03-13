@@ -76,6 +76,9 @@
 
     [self.currentExpense setTitle:[titleField text]];
 
+    if (currentExpense) {
+        self.selectedUser = currentExpense.user;
+    }
 
     NSNumberFormatter *amountFormatter = [[NSNumberFormatter alloc] init];
     [amountFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
