@@ -192,8 +192,8 @@
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Meaningful title..." minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ptS-02-aCo">
                                                     <constraints>
+                                                        <constraint firstAttribute="width" constant="261" id="6Sc-an-XDf"/>
                                                         <constraint firstAttribute="height" constant="31" id="Ie7-6H-HhT"/>
-                                                        <constraint firstAttribute="width" constant="265" id="xF1-94-nrU"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="next"/>
@@ -205,7 +205,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="ptS-02-aCo" firstAttribute="leading" secondItem="yVN-Fo-BOh" secondAttribute="leading" constant="30" id="R3j-Bb-b8E"/>
+                                            <constraint firstItem="ptS-02-aCo" firstAttribute="centerX" secondItem="yVN-Fo-BOh" secondAttribute="centerX" type="default" id="6Dh-GI-MvZ"/>
                                             <constraint firstItem="ptS-02-aCo" firstAttribute="centerY" secondItem="yVN-Fo-BOh" secondAttribute="centerY" type="default" id="jTy-Uh-rqx"/>
                                         </constraints>
                                     </tableViewCell>
@@ -271,7 +271,7 @@
                         <sections>
                             <tableViewSection id="Tap-CX-U2f">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Q2V-GT-CcJ">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Q2V-GT-CcJ">
                                         <rect key="frame" x="0.0" y="10" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">

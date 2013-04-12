@@ -20,6 +20,10 @@
 
     usersData  = [CoreDataHelper getObjectsForEntity:@"User" withSortKey:@"username" andSortAscending:YES andContext:managedObjectContext];
 
+    if ([usersData count] == 1) {
+        [userPicker selectRow:1 inComponent:0 animated:NO];
+    }
+
     if (currentExpense)
     {
         [titleField setText:[currentExpense title]];
