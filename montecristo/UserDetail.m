@@ -27,6 +27,10 @@
 
     self.currentUser.username = [usernameField text];
 
+    NSLog(@"usernameField text: %@", [usernameField text]);
+    NSLog(@"managedObjectContext: %@", self.managedObjectContext);
+    NSLog(@"current user: %@", self.currentUser);
+
     NSError *error;
     if (![self.managedObjectContext save:&error]) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Have you checked your entries?"
@@ -46,6 +50,7 @@
 
 - (IBAction)editSaveButtonPressed:(id)sender
 {
+    NSLog(@"button pressed");
     [self performSave];
 }
 

@@ -25,10 +25,8 @@
         [titleField setText:[currentExpense title]];
         [amountField setText:[currentExpense.amount stringValue]];
 
-        if ([currentExpense user]) {
-            NSUInteger offsetRow = [usersData indexOfObject:currentExpense.user] + 1;
-            [userPicker selectRow:offsetRow inComponent:0 animated:NO];
-        }
+        NSUInteger offsetRow = [usersData indexOfObject:currentExpense.user] + 1;
+        [userPicker selectRow:offsetRow inComponent:0 animated:NO];
     }
 }
 
@@ -44,10 +42,6 @@
     }
 
     [self.currentExpense setTitle:[titleField text]];
-
-    if (currentExpense) {
-        self.selectedUser = currentExpense.user;
-    }
 
     NSNumberFormatter *amountFormatter = [[NSNumberFormatter alloc] init];
     [amountFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
@@ -118,7 +112,12 @@ numberOfRowsInComponent:(NSInteger)component
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row
       inComponent:(NSInteger)component
 {
-    if (row != 0)
+    if (row != 0) {
         self.selectedUser = [usersData objectAtIndex:row - 1];
+
+        if (currentExpense)
+            currentExpense.user = selectedUser;
+    }
+
 }
 @end

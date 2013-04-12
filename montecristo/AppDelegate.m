@@ -27,10 +27,7 @@
 
         // Add our default user object in Core Data
         User *user = (User *)[NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.managedObjectContext];
-        [user setUsername:@"Sylvain"];
-
-        User *otherUser = (User *)[NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.managedObjectContext];
-        otherUser.username = @"Guillaume";
+        user.username = @"Guillaume";
 
 
         // Add default categories

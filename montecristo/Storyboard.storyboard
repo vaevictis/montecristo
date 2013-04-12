@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tRL-Kw-zMA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tRL-Kw-zMA">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -278,7 +278,7 @@
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Meaningful but short title..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wds-OX-QW0">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Meaningful but short title..." minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Wds-OX-QW0">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="Oa5-vP-HAq"/>
                                                         <constraint firstAttribute="width" constant="260" id="cOU-KE-kAj"/>
@@ -338,7 +338,7 @@
             </objects>
             <point key="canvasLocation" x="339" y="-561"/>
         </scene>
-        <!--User Detail - Category details-->
+        <!--User Detail - User details-->
         <scene sceneID="SdL-9a-HVY">
             <objects>
                 <tableViewController id="qVk-wH-Bhu" customClass="UserDetail" sceneMemberID="viewController">
@@ -349,14 +349,14 @@
                         <sections>
                             <tableViewSection id="y4d-g0-zax">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="fOY-Zy-ruM">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="fOY-Zy-ruM">
                                         <rect key="frame" x="0.0" y="10" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="User name..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Rq-Oh-wZy">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="User name..." minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0Rq-Oh-wZy">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="260" id="DBw-IN-NMb"/>
                                                         <constraint firstAttribute="height" constant="30" id="kYt-pL-tP3"/>
@@ -383,7 +383,7 @@
                             <outlet property="delegate" destination="qVk-wH-Bhu" id="kra-Cw-2bq"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Category details" id="Ryc-wW-dqH">
+                    <navigationItem key="navigationItem" title="User details" id="Ryc-wW-dqH">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="W6D-DB-aL0">
                             <connections>
                                 <action selector="editSaveButtonPressed:" destination="qVk-wH-Bhu" id="xZ8-Jv-eYc"/>
@@ -418,10 +418,8 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ExpenseDetail.h"/>
             <relationships>
                 <relationship kind="action" name="editSaveButtonPressed:"/>
-                <relationship kind="action" name="imageFromCamera:"/>
                 <relationship kind="action" name="switchFieldOrCloseKeyboard:"/>
                 <relationship kind="outlet" name="amountField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="imageField" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="titleField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="userPicker" candidateClass="UIPickerView"/>
             </relationships>
